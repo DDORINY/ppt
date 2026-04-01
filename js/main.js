@@ -407,4 +407,4 @@ const App = (() => {
   return { init };
 })();
 
-document.addEventListener("DOMContentLoaded", App.init);
+window.addEventListener("DOMContentLoaded", App.init);

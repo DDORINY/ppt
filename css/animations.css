@@ -1,0 +1,235 @@
+/* 파일 경로: /css/animations.css */
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(30px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(76, 201, 240, 0.28);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(76, 201, 240, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 201, 240, 0);
+  }
+}
+
+@keyframes softFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes softRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(1.4deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes lineFlow {
+  0% {
+    background-position: 0% 50%;
+    opacity: 0.45;
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 1;
+  }
+  100% {
+    background-position: 0% 50%;
+    opacity: 0.45;
+  }
+}
+
+@keyframes blinkIn {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes revealClip {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.fade-left {
+  animation: fadeLeft 0.8s ease forwards;
+}
+
+.fade-right {
+  animation: fadeRight 0.8s ease forwards;
+}
+
+.scale-in {
+  animation: scaleIn 0.7s ease forwards;
+}
+
+.float-soft {
+  animation: softFloat 4.5s ease-in-out infinite;
+}
+
+.rotate-soft {
+  animation: softRotate 6s ease-in-out infinite;
+}
+
+.glow-pulse {
+  animation: pulseGlow 2.2s infinite;
+}
+
+.blink-soft {
+  animation: blinkIn 1.8s ease-in-out infinite;
+}
+
+.line-flow {
+  background-size: 200% 200%;
+  animation: lineFlow 3s linear infinite;
+}
+
+.clip-reveal {
+  animation: revealClip 0.9s ease forwards;
+}
+
+.hover-lift {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+}
+
+.hover-scale {
+  transition: transform 0.35s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.hover-glow {
+  transition: box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.hover-glow:hover {
+  border-color: rgba(76, 201, 240, 0.26);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), 0 0 24px rgba(76, 201, 240, 0.12);
+}
+
+.reveal-up,
+.reveal-left,
+.reveal-right {
+  will-change: transform, opacity;
+}
+
+.delay-1 {
+  animation-delay: 0.08s;
+}
+
+.delay-2 {
+  animation-delay: 0.16s;
+}
+
+.delay-3 {
+  animation-delay: 0.24s;
+}
+
+.delay-4 {
+  animation-delay: 0.32s;
+}
+
+.delay-5 {
+  animation-delay: 0.4s;
+}
+
+.duration-fast {
+  animation-duration: 0.45s !important;
+}
+
+.duration-normal {
+  animation-duration: 0.8s !important;
+}
+
+.duration-slow {
+  animation-duration: 1.2s !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-up,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
